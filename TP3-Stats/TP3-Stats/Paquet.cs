@@ -107,8 +107,36 @@ namespace TP3_Stats
         public Carte PigerCarte()
         {
             Random rand = new Random();
-            int valeur = rand.Next(1,Paquet_.Count());
-            return Paquet_[valeur];
+            int valeur;
+
+            if(VérifierSiResteCarte())
+            {
+                do
+                {
+                    valeur = rand.Next(1, Paquet_.Count);
+                }
+                while (Paquet_[valeur].Utilisée_);
+
+                // mettre utilisé à true
+                Paquet_[valeur].UtiliserCarte();
+
+                return Paquet_[valeur];
+            }
+
+            return null;
+        }
+
+        public bool VérifierSiResteCarte()
+        {
+            for (int i = 0; i < Paquet_.Count; i++)
+            {
+                if(!Paquet_[i].Utilisée_)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }

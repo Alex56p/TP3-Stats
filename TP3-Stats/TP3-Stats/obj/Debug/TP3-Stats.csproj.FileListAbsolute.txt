@@ -8,3 +8,13 @@ c:\users\alexis\documents\visual studio 2013\Projects\TP3-Stats\TP3-Stats\obj\De
 c:\users\alexis\documents\visual studio 2013\Projects\TP3-Stats\TP3-Stats\obj\Debug\TP3-Stats.exe
 c:\users\alexis\documents\visual studio 2013\Projects\TP3-Stats\TP3-Stats\obj\Debug\TP3-Stats.pdb
 c:\users\alexis\documents\visual studio 2013\Projects\TP3-Stats\TP3-Stats\obj\Debug\TP3_Stats.Jeu.resources
+C:\Users\Alexis\Desktop\TP3-Stats\TP3-Stats\TP3-Stats\bin\Debug\TP3-Stats.exe.config
+C:\Users\Alexis\Desktop\TP3-Stats\TP3-Stats\TP3-Stats\obj\Debug\TP3-Stats.exe
+C:\Users\Alexis\Desktop\TP3-Stats\TP3-Stats\TP3-Stats\obj\Debug\TP3-Stats.pdb
+C:\Users\Alexis\Desktop\TP3-Stats\TP3-Stats\TP3-Stats\bin\Debug\TP3-Stats.exe
+C:\Users\Alexis\Desktop\TP3-Stats\TP3-Stats\TP3-Stats\bin\Debug\TP3-Stats.pdb
+C:\Users\Alexis\Desktop\TP3-Stats\TP3-Stats\TP3-Stats\obj\Debug\TP3-Stats.csprojResolveAssemblyReference.cache
+C:\Users\Alexis\Desktop\TP3-Stats\TP3-Stats\TP3-Stats\obj\Debug\TP3_Stats.Jeu.resources
+C:\Users\Alexis\Desktop\TP3-Stats\TP3-Stats\TP3-Stats\obj\Debug\TP3_Stats.Menu.resources
+C:\Users\Alexis\Desktop\TP3-Stats\TP3-Stats\TP3-Stats\obj\Debug\TP3_Stats.Properties.Resources.resources
+C:\Users\Alexis\Desktop\TP3-Stats\TP3-Stats\TP3-Stats\obj\Debug\TP3-Stats.csproj.GenerateResource.Cache
