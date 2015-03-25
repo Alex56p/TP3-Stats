@@ -25,20 +25,19 @@ namespace TP3_Stats
             LB_J1.BackColor = System.Drawing.Color.AntiqueWhite;
         }
 
+        /// <summary>
+        /// Jeu
+        /// Regrouppement de tous les éléments du jeu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        #region Jeu
         private void PB_Paquet_Click(object sender, EventArgs e)
         {
-           // Carte au hasard
-            Carte carte = paquet.PigerCarte();
-
-            PB_Paquet.Image = carte.Image_;
-
-            if(Tour == 1)
-                LB_Score1.Text = (int.Parse(LB_Score1.Text) + carte.Valeur_).ToString();
-            else
-                LB_Score2.Text = (int.Parse(LB_Score2.Text) + carte.Valeur_).ToString();
-
-            VérifierVictoire();
-            ChangerTour();
+            if (Tour == 1 && Form_Menu.Difficulté1 == "")
+                PigerCarte();
+            else if (Form_Menu.Difficulté2 == "")
+                PigerCarte();
         }
 
         private void ChangerTour()
@@ -50,6 +49,13 @@ namespace TP3_Stats
                     Tour = 2;
                     LB_J1.BackColor = System.Drawing.Color.Transparent;
                     LB_J2.BackColor = System.Drawing.Color.AntiqueWhite;
+
+                    if (Form_Menu.Difficulté1 == "Courageux")
+                        PigerCourageux();
+                    else if (Form_Menu.Difficulté1 == "Moyen")
+                        PigerMoyen();
+                    else if (Form_Menu.Difficulté1 == "Prudent")
+                        PigerPrudent();
                 }
             }
             else if(Tour == 2 && !J1_Fini)
@@ -59,6 +65,13 @@ namespace TP3_Stats
                     Tour = 1;
                     LB_J1.BackColor = System.Drawing.Color.AntiqueWhite;
                     LB_J2.BackColor = System.Drawing.Color.Transparent;
+
+                    if (Form_Menu.Difficulté2 == "Courageux")
+                        PigerCourageux();
+                    else if (Form_Menu.Difficulté2 == "Moyen")
+                        PigerMoyen();
+                    else if (Form_Menu.Difficulté2 == "Prudent")
+                        PigerPrudent();
                 }
             }
         }
@@ -122,5 +135,49 @@ namespace TP3_Stats
                 VérifierVictoire();
             ChangerTour();
         }
+
+        private void PigerCarte()
+        {
+            // Carte au hasard
+            Carte carte = paquet.PigerCarte();
+
+            PB_Paquet.Image = carte.Image_;
+
+            if (Tour == 1)
+                LB_Score1.Text = (int.Parse(LB_Score1.Text) + carte.Valeur_).ToString();
+            else
+                LB_Score2.Text = (int.Parse(LB_Score2.Text) + carte.Valeur_).ToString();
+
+            VérifierVictoire();
+            ChangerTour();
+        }
+        #endregion
+
+        /// <summary>
+        /// Ordinateurs
+        /// Regroupement des AI
+        /// </summary>
+        #region Ordinateurs
+        private void PigerCourageux()
+        {
+            // TEMPORAIRE
+            MessageBox.Show("Courageux");
+            PigerCarte();
+        }
+
+        private void PigerMoyen()
+        {
+            // TEMPORAIRE
+            MessageBox.Show("Moyen");
+            PigerCarte();
+        }
+
+        private void PigerPrudent()
+        {
+            // TEMPORAIRE
+            MessageBox.Show("Prudent");
+            PigerCarte();
+        }
+        #endregion
     }
 }
