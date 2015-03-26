@@ -46,6 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Carte.cs" />
+    <Compile Include="ChoisirValeurAs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChoisirValeurAs.Designer.cs">
+      <DependentUpon>ChoisirValeurAs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Jeu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +67,9 @@
     <Compile Include="Paquet.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ChoisirValeurAs.resx">
+      <DependentUpon>ChoisirValeurAs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Jeu.resx">
       <DependentUpon>Jeu.cs</DependentUpon>
     </EmbeddedResource>

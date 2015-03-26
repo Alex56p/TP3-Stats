@@ -15,9 +15,10 @@ namespace TP3_Stats
         /// <summary>
         /// Constructeur
         /// </summary>
-        public Paquet ()
+        public Paquet (bool complet = false)
         {
-            DeclarerCartes();
+            if(complet)
+                DeclarerCartes();
         }
 
         /// <summary>
@@ -135,8 +136,29 @@ namespace TP3_Stats
                     return true;
                 }
             }
-
             return false;
+        }
+
+
+        public float GetNbCartesBonnes(int Score)
+        {
+            int NbMax = 21 - Score;
+
+            return GetNbCartesVoulues(NbMax);
+        }
+        
+        public float GetNbCartesVoulues(int NbMax)
+        {
+            float NbCartes = 0;
+            for(int i = 0; i < Paquet_.Count; i++)
+            {
+                if(Paquet_[i].Valeur_ <= NbMax)
+                {
+                    NbCartes++;
+                }
+            }
+
+            return NbCartes;
         }
     }
 }

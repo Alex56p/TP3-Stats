@@ -13,8 +13,11 @@ namespace TP3_Stats
     public partial class Form_Menu : Form
     {
         // Attributs pour la difficulté des ordinateurs (S'il y a lieu)
-        public static string Difficulté1;
-        public static string Difficulté2;
+        public static string Difficulté1 = "";
+        public static string Difficulté2 = "";
+
+        public static bool Compte1;
+        public static bool Compte2;
 
         public Form_Menu()
         {
@@ -26,8 +29,8 @@ namespace TP3_Stats
 
         private void BTN_CommencerPartie_Click(object sender, EventArgs e)
         {
-            RechercherDifficutle(1);
-            RechercherDifficutle(2);
+            RechercherDifficulte(1);
+            RechercherDifficulte(2);
 
             if (Difficulté1 == "Erreur")
                 MessageBox.Show("Erreur, veuillez entrer une difficulté pour le joueur 1!");
@@ -42,35 +45,38 @@ namespace TP3_Stats
 
         private void CB_Joueur1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (CB_Joueur1.SelectedItem == "Ordinateur")
+            if (CB_Joueur1.SelectedItem.ToString() == "Ordinateur")
             {
                 GB_Ordinateur1.Enabled = true;
-                Difficulté1 = CB_Joueur1.SelectedItem.ToString();
-
+                CB_Compte1.Enabled = true;
+                RechercherDifficulte(1);
             }
             else
             {
                 GB_Ordinateur1.Enabled = false;
+                CB_Compte1.Enabled = false;
                 Difficulté1 = "";
             }
         }
         private void CB_Joueur2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (CB_Joueur2.SelectedItem == "Ordinateur")
+            if (CB_Joueur2.SelectedItem.ToString() == "Ordinateur")
             {
                 GB_Ordinateur2.Enabled = true;
-                RechercherDifficutle(1);
+                CB_Compte2.Enabled = true;
+                RechercherDifficulte(2);
             }
             else
             {
                 GB_Ordinateur2.Enabled = false;
-                RechercherDifficutle(2);
+                CB_Compte2.Enabled = false;
+                Difficulté2 = "";
             }
         }
 
-        private void RechercherDifficutle(int Joueur)
+        private void RechercherDifficulte(int Joueur)
         {
-            if(Joueur == 1 && CB_Joueur1.SelectedItem == "Ordinateur")
+            if(Joueur == 1 && CB_Joueur1.SelectedItem.ToString() == "Ordinateur")
             {
                 if (RB_Courageux1.Checked)
                     Difficulté1 = RB_Courageux1.Text;
@@ -81,8 +87,12 @@ namespace TP3_Stats
                 else
                     Difficulté1 = "Erreur";
 
+                if (CB_Compte1.Checked)
+                    Compte1 = true;
+                else
+                    Compte1 = false;
             }
-            else if (Joueur == 2 && CB_Joueur2.SelectedItem == "Ordinateur")
+            else if (Joueur == 2 && CB_Joueur2.SelectedItem.ToString() == "Ordinateur")
             {
                 if (RB_Courageux2.Checked)
                     Difficulté2 = RB_Courageux1.Text;
@@ -92,6 +102,11 @@ namespace TP3_Stats
                     Difficulté2 = RB_Prudent1.Text;
                 else
                     Difficulté2 = "Erreur";
+
+                if (CB_Compte2.Checked)
+                    Compte2 = true;
+                else
+                    Compte2 = false;
             }
         }
     }

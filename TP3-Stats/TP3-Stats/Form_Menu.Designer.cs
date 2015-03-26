@@ -42,6 +42,8 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.CB_Joueur2 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.CB_Compte1 = new System.Windows.Forms.CheckBox();
+            this.CB_Compte2 = new System.Windows.Forms.CheckBox();
             this.TB_Joueur1.SuspendLayout();
             this.GB_Ordinateur1.SuspendLayout();
             this.GB_Ordinateur2.SuspendLayout();
@@ -50,7 +52,7 @@
             // 
             // BTN_CommencerPartie
             // 
-            this.BTN_CommencerPartie.Location = new System.Drawing.Point(443, 255);
+            this.BTN_CommencerPartie.Location = new System.Drawing.Point(451, 296);
             this.BTN_CommencerPartie.Name = "BTN_CommencerPartie";
             this.BTN_CommencerPartie.Size = new System.Drawing.Size(133, 23);
             this.BTN_CommencerPartie.TabIndex = 0;
@@ -211,19 +213,45 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "BLACK JACK";
             // 
-            // Menu
+            // CB_Compte1
+            // 
+            this.CB_Compte1.AutoSize = true;
+            this.CB_Compte1.Enabled = false;
+            this.CB_Compte1.Font = new System.Drawing.Font("Cooper Black", 12F);
+            this.CB_Compte1.Location = new System.Drawing.Point(38, 255);
+            this.CB_Compte1.Name = "CB_Compte1";
+            this.CB_Compte1.Size = new System.Drawing.Size(170, 23);
+            this.CB_Compte1.TabIndex = 8;
+            this.CB_Compte1.Text = "Compte les cartes";
+            this.CB_Compte1.UseVisualStyleBackColor = true;
+            // 
+            // CB_Compte2
+            // 
+            this.CB_Compte2.AutoSize = true;
+            this.CB_Compte2.Enabled = false;
+            this.CB_Compte2.Font = new System.Drawing.Font("Cooper Black", 12F);
+            this.CB_Compte2.Location = new System.Drawing.Point(373, 255);
+            this.CB_Compte2.Name = "CB_Compte2";
+            this.CB_Compte2.Size = new System.Drawing.Size(170, 23);
+            this.CB_Compte2.TabIndex = 9;
+            this.CB_Compte2.Text = "Compte les cartes";
+            this.CB_Compte2.UseVisualStyleBackColor = true;
+            // 
+            // Form_Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LimeGreen;
-            this.ClientSize = new System.Drawing.Size(596, 294);
+            this.ClientSize = new System.Drawing.Size(596, 336);
+            this.Controls.Add(this.CB_Compte2);
+            this.Controls.Add(this.CB_Compte1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.GB_Ordinateur2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.GB_Ordinateur1);
             this.Controls.Add(this.TB_Joueur1);
             this.Controls.Add(this.BTN_CommencerPartie);
-            this.Name = "Menu";
+            this.Name = "Form_Menu";
             this.Text = "Menu Principal...";
             this.TB_Joueur1.ResumeLayout(false);
             this.GB_Ordinateur1.ResumeLayout(false);
@@ -252,6 +280,8 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ComboBox CB_Joueur2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox CB_Compte1;
+        private System.Windows.Forms.CheckBox CB_Compte2;
     }
 }
 
