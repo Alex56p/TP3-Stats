@@ -151,20 +151,45 @@ namespace TP3_Stats
 
             PB_Paquet.Image = carte.Image_;
 
-            if(carte.Valeur_ == 1)
-            {
-                ChoisirValeurAs Choisir = new ChoisirValeurAs();
-                Choisir.ShowDialog();
-                carte.Valeur_ = Choisir.Valeur;
-            }
+            
 
             if (Tour == 1)
             {
+                if(carte.Valeur_ == 1)
+                {
+                    if (Form_Menu.Difficulté1 == "")
+                    {
+                        ChoisirValeurAs Choisir = new ChoisirValeurAs();
+                        Choisir.ShowDialog();
+                        carte.Valeur_ = Choisir.Valeur;
+                    }
+                    else
+                    {
+                        if (LB_Score1.Text == "10")
+                            carte.Valeur_ = 11;
+                    }
+                }
+                
+
                 LB_Score1.Text = (int.Parse(LB_Score1.Text) + carte.Valeur_).ToString();
                 LB_CartesJ1.Items.Add(carte.Description_);
             }
-            else
+            else 
             {
+                if (carte.Valeur_ == 1)
+                {
+                    if (Form_Menu.Difficulté1 == "")
+                    {
+                        ChoisirValeurAs Choisir = new ChoisirValeurAs();
+                        Choisir.ShowDialog();
+                        carte.Valeur_ = Choisir.Valeur;
+                    }
+                    else
+                    {
+                        if (LB_Score2.Text == "10")
+                            carte.Valeur_ = 11;
+                    }
+                }
                 LB_Score2.Text = (int.Parse(LB_Score2.Text) + carte.Valeur_).ToString();
                 LB_CartesJ2.Items.Add(carte.Description_);
             }
@@ -185,7 +210,7 @@ namespace TP3_Stats
             {
                 if (Form_Menu.Compte1)
                 {
-                    if (CalculerProbabiliteCompte() >= 0.5f || (J2_Fini && int.Parse(LB_Score2.Text) > int.Parse(LB_Score1.Text)))
+                    if (CalculerProbabiliteCompte() >= 0.5f || (int.Parse(LB_Score2.Text) > int.Parse(LB_Score1.Text)))
                         PigerCarte();
                     else
                     {
@@ -197,7 +222,7 @@ namespace TP3_Stats
                 }
                 else
                 {
-                    if (CalculerProbabiliteSansCompte() >= 0.5f || (J2_Fini && int.Parse(LB_Score2.Text) > int.Parse(LB_Score1.Text)))
+                    if (CalculerProbabiliteSansCompte() >= 0.5f || (int.Parse(LB_Score2.Text) > int.Parse(LB_Score1.Text)))
                         PigerCarte();
                     else
                     {
@@ -212,7 +237,7 @@ namespace TP3_Stats
             {
                 if (Form_Menu.Compte2)
                 {
-                    if (CalculerProbabiliteCompte() >= 0.5f || (J1_Fini && int.Parse(LB_Score2.Text) < int.Parse(LB_Score1.Text)))
+                    if (CalculerProbabiliteCompte() >= 0.5f || (int.Parse(LB_Score2.Text) < int.Parse(LB_Score1.Text)))
                         PigerCarte();
                     else
                     {
@@ -224,7 +249,7 @@ namespace TP3_Stats
                 }
                 else
                 {
-                    if (CalculerProbabiliteSansCompte() >= 0.5f || (J1_Fini && int.Parse(LB_Score2.Text) < int.Parse(LB_Score1.Text)))
+                    if (CalculerProbabiliteSansCompte() >= 0.5f || (int.Parse(LB_Score2.Text) < int.Parse(LB_Score1.Text)))
                         PigerCarte();
                     else
                     {
@@ -243,7 +268,7 @@ namespace TP3_Stats
             {
                 if (Form_Menu.Compte1)
                 {
-                    if (CalculerProbabiliteCompte() >= 0.65f || (J2_Fini && int.Parse(LB_Score2.Text) > int.Parse(LB_Score1.Text)))
+                    if (CalculerProbabiliteCompte() >= 0.65f || ( int.Parse(LB_Score2.Text) > int.Parse(LB_Score1.Text)))
                         PigerCarte();
                     else
                     {
@@ -255,7 +280,7 @@ namespace TP3_Stats
                 }
                 else
                 {
-                    if (CalculerProbabiliteSansCompte() >= 0.65f || (J2_Fini && int.Parse(LB_Score2.Text) > int.Parse(LB_Score1.Text)))
+                    if (CalculerProbabiliteSansCompte() >= 0.65f || (int.Parse(LB_Score2.Text) > int.Parse(LB_Score1.Text)))
                         PigerCarte();
                     else
                     {
@@ -270,7 +295,7 @@ namespace TP3_Stats
             {
                 if (Form_Menu.Compte2)
                 {
-                    if (CalculerProbabiliteCompte() >= 0.65f || (J1_Fini && int.Parse(LB_Score2.Text) < int.Parse(LB_Score1.Text)))
+                    if (CalculerProbabiliteCompte() >= 0.65f || (int.Parse(LB_Score2.Text) < int.Parse(LB_Score1.Text)))
                         PigerCarte();
                     else
                     {
@@ -282,7 +307,7 @@ namespace TP3_Stats
                 }
                 else
                 {
-                    if (CalculerProbabiliteSansCompte() >= 0.65f || (J1_Fini && int.Parse(LB_Score2.Text) < int.Parse(LB_Score1.Text)))
+                    if (CalculerProbabiliteSansCompte() >= 0.65f || ( int.Parse(LB_Score2.Text) < int.Parse(LB_Score1.Text)))
                         PigerCarte();
                     else
                     {
@@ -301,7 +326,7 @@ namespace TP3_Stats
             {
                 if (Form_Menu.Compte1)
                 {
-                    if (CalculerProbabiliteCompte() >= 0.8f || (J2_Fini && int.Parse(LB_Score2.Text) > int.Parse(LB_Score1.Text)))
+                    if (CalculerProbabiliteCompte() >= 0.8f || (int.Parse(LB_Score2.Text) > int.Parse(LB_Score1.Text)))
                         PigerCarte();
                     else
                     {
@@ -313,7 +338,7 @@ namespace TP3_Stats
                 }
                 else
                 {
-                    if (CalculerProbabiliteSansCompte() >= 0.8f || (J2_Fini && int.Parse(LB_Score2.Text) > int.Parse(LB_Score1.Text)))
+                    if (CalculerProbabiliteSansCompte() >= 0.8f || (int.Parse(LB_Score2.Text) > int.Parse(LB_Score1.Text)))
                         PigerCarte();
                     else
                     {
@@ -328,7 +353,7 @@ namespace TP3_Stats
             {
                 if (Form_Menu.Compte2)
                 {
-                    if (CalculerProbabiliteCompte() >= 0.8f || (J1_Fini && int.Parse(LB_Score2.Text) < int.Parse(LB_Score1.Text)))
+                    if (CalculerProbabiliteCompte() >= 0.8f || (int.Parse(LB_Score2.Text) < int.Parse(LB_Score1.Text)))
                         PigerCarte();
                     else
                     {
@@ -340,7 +365,7 @@ namespace TP3_Stats
                 }
                 else
                 {
-                    if (CalculerProbabiliteSansCompte() >= 0.8f || (J1_Fini && int.Parse(LB_Score2.Text) < int.Parse(LB_Score1.Text)))
+                    if (CalculerProbabiliteSansCompte() >= 0.8f || (int.Parse(LB_Score2.Text) < int.Parse(LB_Score1.Text)))
                         PigerCarte();
                     else
                     {
