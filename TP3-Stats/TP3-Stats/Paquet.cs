@@ -105,11 +105,18 @@ namespace TP3_Stats
             Paquet_.Add(new Carte("Roi De Pique", Properties.Resources.king_of_spades2, 10));
         }
 
+        /// <summary>
+        /// PigerCarte
+        /// Permet de piger une cartes dans le paquet
+        /// </summary>
+        /// <returns></returns>
         public Carte PigerCarte()
         {
+            // Déclarer un nombre random
             Random rand = new Random();
             int valeur;
 
+            // Vérifier s'il reste des cartes dans le paquet
             if(VérifierSiResteCarte())
             {
                 do
@@ -127,19 +134,31 @@ namespace TP3_Stats
             return null;
         }
 
+        /// <summary>
+        /// VérifierSiResteCarte
+        /// Vérifier s'il reste des cartes dans le paquet
+        /// </summary>
+        /// <returns></returns>
         public bool VérifierSiResteCarte()
         {
+            // Regarder chaque cartes si elles sont utilisées
             for (int i = 0; i < Paquet_.Count; i++)
             {
                 if(!Paquet_[i].Utilisée_)
                 {
+                    // Il reste des cartes
                     return true;
                 }
             }
+            // Il ne reste pas de cartes
             return false;
         }
 
-
+        /// <summary>
+        /// Retourne le nombre de carte qui serait possible de piger pour ne pas dépasser 21
+        /// </summary>
+        /// <param name="Score"></param>
+        /// <returns></returns>
         public float GetNbCartesBonnes(int Score)
         {
             int NbMax = 21 - Score;
@@ -147,9 +166,18 @@ namespace TP3_Stats
             return GetNbCartesVoulues(NbMax);
         }
         
+        /// <summary>
+        /// GetNbCartesVoulues
+        /// Permet de retourner le nombre de cartes qui pourrait être bonnes
+        /// (Pas dépasser 21)
+        /// </summary>
+        /// <param name="NbMax"></param>
+        /// <returns></returns>
         public float GetNbCartesVoulues(int NbMax)
         {
             float NbCartes = 0;
+            
+            // regarder les cartes qui sont en dessous du max
             for(int i = 0; i < Paquet_.Count; i++)
             {
                 if(Paquet_[i].Valeur_ <= NbMax)
@@ -157,7 +185,6 @@ namespace TP3_Stats
                     NbCartes++;
                 }
             }
-
             return NbCartes;
         }
     }

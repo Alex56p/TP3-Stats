@@ -29,3 +29,4 @@ C:\Users\Antho\Desktop\TP3-Stats\TP3-Stats\TP3-Stats\obj\Debug\TP3-Stats.csproj.
 C:\Users\Alexis\Desktop\TP3-Stats\TP3-Stats\TP3-Stats\obj\Debug\TP3_Stats.Form_Menu.resources
 C:\Users\Antho\Desktop\TP3-Stats\TP3-Stats\TP3-Stats\obj\Debug\TP3_Stats.Form_Menu.resources
 C:\Users\Antho\Desktop\TP3-Stats\TP3-Stats\TP3-Stats\obj\Debug\TP3_Stats.ChoisirValeurAs.resources
+C:\Users\Alexis\Desktop\TP3-Stats\TP3-Stats\TP3-Stats\obj\Debug\TP3_Stats.ChoisirValeurAs.resources
