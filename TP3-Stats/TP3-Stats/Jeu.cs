@@ -268,7 +268,7 @@ namespace TP3_Stats
                 if (Form_Menu.Compte1)
                 {
                     // Regarder si les probabilités sont au dessus de 50%
-                    if (CalculerProbabiliteCompte() >= 0.5f || (int.Parse(LB_Score2.Text) > int.Parse(LB_Score1.Text)))
+                    if (CalculerProbabiliteCompte() >= 0.42f || (int.Parse(LB_Score2.Text) > int.Parse(LB_Score1.Text)))
                         PigerCarte();
                     else
                     {
@@ -282,7 +282,7 @@ namespace TP3_Stats
                 else // Si l'ordinateur ne compte pas les cartes
                 {
                     // Calculer si la probabilité est au dessus de 50%
-                    if (CalculerProbabiliteSansCompte() >= 0.5f || (int.Parse(LB_Score2.Text) > int.Parse(LB_Score1.Text)))
+                    if (CalculerProbabiliteSansCompte() >= 0.42f || (int.Parse(LB_Score2.Text) > int.Parse(LB_Score1.Text)))
                         PigerCarte();
                     else
                     {
@@ -300,7 +300,7 @@ namespace TP3_Stats
                 if (Form_Menu.Compte2)
                 {
                     // Calculer si la probabilité est au dessus de 50%
-                    if (CalculerProbabiliteCompte() >= 0.5f || (int.Parse(LB_Score2.Text) < int.Parse(LB_Score1.Text)))
+                    if (CalculerProbabiliteCompte() >= 0.42f || (int.Parse(LB_Score2.Text) < int.Parse(LB_Score1.Text)))
                         PigerCarte();
                     else
                     {
@@ -314,7 +314,7 @@ namespace TP3_Stats
                 else
                 {
                     // Calculer si la probabilité est au dessus de 50%
-                    if (CalculerProbabiliteSansCompte() >= 0.5f || (int.Parse(LB_Score2.Text) < int.Parse(LB_Score1.Text)))
+                    if (CalculerProbabiliteSansCompte() >= 0.42f || (int.Parse(LB_Score2.Text) < int.Parse(LB_Score1.Text)))
                         PigerCarte();
                     else
                     {
